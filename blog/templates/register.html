@@ -11,6 +11,12 @@
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input type="text" class="form-control" id="username" name="username">
+            {% if username %}
+                <div class="alert alert-danger alert-dismissible">
+                    <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ username }}
+                </div>
+            {% endif %}
         </div>
         <div class="mb-3">
             <label for="first_nam" class="form-label">First Name</label>
