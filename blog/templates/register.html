@@ -3,8 +3,6 @@
 {% block title %} Register Page {% endblock %}
 {% block registeractive %} active {% endblock registeractive %}
 
-{% block css %}
-{% endblock %}
 {% block body %}
 <form action="/register/" method="POST"> {% csrf_token %}
     <div class="container mt-5">
