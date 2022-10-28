@@ -1,3 +1,4 @@
+from tkinter import Widget
 from django import forms
 from .models import Profile, BlogPost
 
@@ -14,6 +15,12 @@ class ProfileForm(forms.ModelForm):
             'linkedin',
             'image',
         )
+        widgets = {
+            'facebook': forms.TextInput(attrs={'class': 'form-control'}),
+            'instagram': forms.TextInput(attrs={'class': 'form-control'}),
+            'linkedin': forms.TextInput(attrs={'class': 'form-control'}),
+            'bio': forms.Textarea(attrs={'class': 'form-control'}),
+        }
 
 
 class BlogPostForm(forms.ModelForm):
