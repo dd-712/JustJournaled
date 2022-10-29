@@ -17,6 +17,7 @@
        <div>
           <p>Bio</p>
           <p>{{user.profile.bio}}</p>
+          <a href="/edit_profile/"><i class="fa-solid fa-pen-to-square"></i></a>
        </div>
     </div>
     {% if user.profile.linkedin or user.profile.facebook or user.profile.instagram %}
@@ -35,98 +36,4 @@
     </div>
     {% endif %}
  </div>
-
-{% comment %} <div class="container profile">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="profile-img">
-                {% if user.profile.image %}
-                <img src="{{user.profile.image.url}}" alt="" width="310px" height="270px">
-                {% endif %}
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div class="profile-tab">
-                <div class="tab-pane">
-                    <br><br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Username:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Full Name:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user.get_full_name}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Email:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user.email}}</p>
-                        </div>
-                    </div>
-                    {% if user.profile.phone_no %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Phone Number:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user.profile.phone_no}}</p>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% if user.profile.bio %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Bio:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user.profile.bio}}</p>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% if user.profile.linkedin %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Linkedin:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.profile.linkedin}}">{{user.profile.linkedin}}</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% if user.profile.instagram %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Instagram:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.profile.instagram}}">{{user.profile.instagram}}</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% if user.profile.facebook %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Facebook:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.profile.facebook}}">{{user.profile.facebook}}</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-                <a href="/edit_profile/" class="btn btn-secondary" id="profile-btn">Edit Profile</a>
-            </div>
-        </div>
-    </div>
-</div> {% endcomment %}
 {% endblock %}

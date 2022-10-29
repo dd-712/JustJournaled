@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from .models import *
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileForm, BlogPostForm
@@ -75,8 +76,10 @@ class UpdatePostView(UpdateView):
 
 
 def user_profile(request, myid):
-    # post = BlogPost.objects.filter(id=myid)
-    return render(request, "profile.html")
+    post = BlogPost.objects.filter(id=myid)
+    name = post[0].author
+    user = User.objects.get(username = name)
+    return render(request, "user_profile.html", {'i':user})
 
 
 def profile_view(request):
