@@ -5,7 +5,38 @@
 
 {% block body %}
 
-<div class="container profile">
+<div class="pCard_card">
+    <div class="pCard_up" style="background-image: url({{ user.profile.image.url }});">
+       <div class="pCard_text">
+          <h2>{{user}}</h2>
+          <h4>{{user.get_full_name}}</h4>
+       </div>
+       <div class="pCard_add"><i class="fa fa-plus"></i></div>
+    </div>
+    <div class="pCard_down">
+       <div>
+          <p>Bio</p>
+          <p>{{user.profile.bio}}</p>
+       </div>
+    </div>
+    {% if user.profile.linkedin or user.profile.facebook or user.profile.instagram %}
+    <div class="pCard_back">
+       <p>Connect With Me</p>
+       {% if user.profile.linkedin %}
+       <a href="{{user.profile.linkedin}}"><i class="fab fa-facebook fa-2x"></i></a>
+       {% endif %}
+       {% if user.profile.linkedin %}
+       <a href="{{user.profile.linkedin}}"><i class="fab fa-linkedin fa-2x"></i></a>
+       {% endif %}
+       {% if user.profile.instagram %}
+       <a href="{{user.profile.instagram}}"><i class="fab fa-instagram fa-2x"></i></a>
+       {% endif %}
+       <p>Follow Me!</p>
+    </div>
+    {% endif %}
+ </div>
+
+{% comment %} <div class="container profile">
     <div class="row">
         <div class="col-md-4">
             <div class="profile-img">
@@ -93,9 +124,9 @@
                     </div>
                     {% endif %}
                 </div>
-                <a href="/edit_profile/" class="btn btn-secondary">Edit Profile</a>
+                <a href="/edit_profile/" class="btn btn-secondary" id="profile-btn">Edit Profile</a>
             </div>
         </div>
     </div>
-</div>
+</div> {% endcomment %}
 {% endblock %}
