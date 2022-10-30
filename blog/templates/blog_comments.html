@@ -24,9 +24,9 @@
 		</div>
 	</div>
 	<br>
-	<img src="/media/{{post.image}}" alt="" height="250px" width="500px">
+	<img class='blog-img' src="/media/{{post.image}}" alt="blog image">
 	<br>
-	<p>{{post.content}}.</p>
+	<p class="blog-content">{{post.content}}.</p>
 	<hr>
 	{% if user.is_authenticated %}
 	<div class="container">

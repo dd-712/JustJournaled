@@ -8,15 +8,23 @@
 
     <div class="row">
         {% for post in posts %}
-        <div class="col-lg-4 my-4">
-            <div class="card shadow">
+        <div class="card">
+            <img src="/media/{{post.image}}" class="card-img-top" alt="blog image">
+            <div class='card-body'>
+                <h6>{{post.title}}</h6>
+                <p>{{post.content| truncatechars:100}}</p>
+                <div>
+                    <a href="blog/{{post.slug}}">Read More</a>
+                </div>
+            </div>
+            {% comment %} <div class="card shadow">
                 <img src="/media/{{post.image}}" class="card-img-top" alt="blog image" height="250px">
                 <div class="card-body">
 					<h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
 					<p class="card-text">{{post.content| truncatechars:210}}</p>
 					<a href="blog/{{post.slug}}" class="btn btn-primary blog-btn">Read More {% if user.is_superuser %}<a href="delete_blog_post/{{post.slug}}/" class="btn btn-danger mx-4">Delete Blog</a>{% endif %}</a>
                 </div>
-              </div>
+            </div> {% endcomment %}
         </div>
         {% endfor %}
     </div>
